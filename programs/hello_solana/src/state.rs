@@ -6,3 +6,13 @@ pub struct Counter {
     pub count: u64,
     pub authority: Pubkey,
 }
+
+#[account]
+#[derive(InitSpace)]
+pub struct Profile {
+    pub authority: Pubkey,
+    #[max_len(32)]
+    pub name: String,
+    #[max_len(200)]
+    pub bio: String,
+}

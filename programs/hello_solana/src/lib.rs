@@ -22,4 +22,13 @@ pub mod hello_solana {
     pub fn increment(ctx: Context<Increment>) -> Result<()> {
         crate::instructions::increment::handle_increment(ctx)
     }
+
+    pub fn create_profile(
+    ctx: Context<CreateProfile>,
+    name: String,
+    bio: String,
+) -> Result<()> {
+    crate::instructions::profile::handle_create_profile(ctx, name, bio)
+}
+
 }
